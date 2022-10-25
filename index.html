@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTA</title>
+    <style>
+        @keyframes rotate {
+            0%{
+                transform: rotate(0) scale(0.4);
+            }
+            50%{
+                transform: rotate(180deg) scale(0.7);
+            }
+            100%{
+                transform: rotate(360deg) scale(0.4);
+            }
+        }
+        body{
+            overflow-x: hidden;
+        }
+        .parent{
+            width: 50px;
+            height: 50px;
+            background-image: linear-gradient(90deg, rgb(123, 255, 0),rgb(0, 255, 136));
+            border-radius: 6px;
+            margin-right: auto;
+        }
+        .child{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(42, 95, 165);
+            border-radius: 5px;
+            transform: scale(0.6);
+            animation: rotate 2s linear infinite;
+            /* ----------------border a linear-gradient use kore, border k radius korar 2ta method(transform-translate&position-relative)----------------------- */
+            /* transform: translate(5px); */
+            /* position: relative;        
+            left: 7px; */
+        }
+        .ball{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: brown;
+            position: relative;
+            left: 1200px;
+            top: -350px;
+            transition: transform 0.5s ease-out 0.2s;
+        }
+        .sec2:hover .ball{
+            transform: translate(-550px, -600px);
+        }
+        img{
+           /* transform: scaleX(-1); */
+           margin-left: auto;
+           margin-right: 200px;
+           transition: transform 0.2s ease-in-out;
+           display: block;
+        }
+        .sec2:hover img{
+            transform: rotate(50deg);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="parent">
+            <div class="child">
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <img src="Capture.PNG" alt="">
+        <div class="ball"></div>
+    </section>
+</body>
+</html>
